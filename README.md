@@ -8,4 +8,4 @@
 * [ ] write tests
 
 ## License
-MIT © [Surinderpal Singh](https://github.com/spcheema)
+MIT © [Surinder Pal Singh](https://github.com/spcheema)
