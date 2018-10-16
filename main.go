@@ -10,6 +10,8 @@ import (
 	"fmt"
 	"time"
 	"rest-api/app/kitty"
+	"github.com/gobuffalo/envy"
+	
 )
 
 func sayHello(w http.ResponseWriter, r *http.Request) {
@@ -53,6 +55,7 @@ func main()  {
 	if err := chi.Walk(router, walkFunc); err != nil {
 		log.Panicf("Logging err: %s\n", err.Error())
 	}
+	
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", envy.Get("APP_PORT", "8001")), router))
 
-	log.Fatal(http.ListenAndServe(":8001", router))
 }
